@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7lefjjsthfjq"]
+
+[ext_resource type="Texture2D" uid="uid://bnkpdeaeiwceu" path="res://Trenchbroom/textures/PixelTexturePack/Bricks/SLIMBRICKS.png" id="1_cuqgi"]
+
+[resource]
+albedo_texture = ExtResource("1_cuqgi")
+metallic_specular = 0.0
+texture_filter = 2

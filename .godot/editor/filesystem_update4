@@ -1,0 +1,8 @@
+res://addons/inventory-system/ui/transaction_slot_ui.tscn
+res://assets/sprites/burst_animation.tres
+res://scenes/main-environment.tres
+res://godot Style Elements/BlackAndWhite10px.tres
+res://godot Style Elements/BuchsBoxStyleBox.tres
+res://shaders/gem_shader.tres
+res://shaders/gem_blue_shader.tres
+res://addons/inventory-system/core/slot.gd

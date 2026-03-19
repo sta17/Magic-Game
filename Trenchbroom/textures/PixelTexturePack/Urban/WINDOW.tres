@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cv4l5aof0ksp5"]
+
+[ext_resource type="Texture2D" uid="uid://bjnd7yuo5dd81" path="res://Trenchbroom/textures/PixelTexturePack/Urban/WINDOW.png" id="1_vqjp4"]
+
+[resource]
+albedo_texture = ExtResource("1_vqjp4")
+metallic_specular = 0.0
+texture_filter = 2

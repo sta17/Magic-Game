@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://sekdnb7kfucv"]
+
+[ext_resource type="PackedScene" uid="uid://bk8vailkk2lkl" path="res://assets/models/Public Domain/KayKit/Kaykit-Adventurers/staff.gltf" id="1_8tlmw"]
+
+[node name="Staff" type="Node3D"]
+
+[node name="staff" parent="." instance=ExtResource("1_8tlmw")]

@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://cgfp6o53fdyme"]
+
+[ext_resource type="Script" uid="uid://bf3mrw1uibw7c" path="res://scripts/hud.gd" id="1_ycqcn"]
+[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="2_5t2jt"]
+[ext_resource type="PackedScene" uid="uid://l8u16sjn0fng" path="res://addons/inventory-system/ui/inventorySystemUI.tscn" id="3_1rtfa"]
+[ext_resource type="Script" uid="uid://bdvceqeal5p0o" path="res://scripts/cursor_looks.gd" id="4_m3d0i"]
+[ext_resource type="Texture2D" uid="uid://r0iwsaulp5vx" path="res://assets/unity Assets/Cursors 64/Arrow.png" id="5_kmdno"]
+[ext_resource type="Texture2D" uid="uid://p7fseblf0e1g" path="res://assets/unity Assets/Cursors 64/Arrow_Loot.png" id="6_d1add"]
+[ext_resource type="Texture2D" uid="uid://dtd3oymkgn5q0" path="res://assets/unity Assets/Cursors 64/Cursor_book.png" id="7_1goss"]
+[ext_resource type="Texture2D" uid="uid://cg8lf2xmpwxog" path="res://assets/unity Assets/Cursors 64/Cursor_Flask.png" id="8_qgf4a"]
+[ext_resource type="Texture2D" uid="uid://bd1g6n5t32f57" path="res://assets/unity Assets/Cursors 64/Cursor_Settings.png" id="9_ikysf"]
+[ext_resource type="Texture2D" uid="uid://shx4k78e02cx" path="res://assets/unity Assets/Cursors 64/Arrow_Cross_Smaller.png" id="10_5jyui"]
+[ext_resource type="Texture2D" uid="uid://cl7p2xb31q12g" path="res://assets/unity Assets/Cursors 64/Arrow_Compass.png" id="11_hontc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
+font = ExtResource("2_5t2jt")
+font_size = 36
+outline_size = 12
+outline_color = Color(0, 0, 0, 0.470588)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ycqcn")
+
+[node name="Crosshair" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(64, 64)
+
+[node name="Health" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 90.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "100%"
+label_settings = SubResource("LabelSettings_fpmwk")
+vertical_alignment = 2
+
+[node name="Inventory System UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_1rtfa")]
+player = NodePath("")
+
+[node name="InteractMessagePosition" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractMessage" type="Label" parent="InteractMessagePosition"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "E - Open Loot"
+label_settings = SubResource("LabelSettings_fpmwk")
+vertical_alignment = 2
+
+[node name="Cursor Looks" type="Node" parent="."]
+script = ExtResource("4_m3d0i")
+default_cursor = ExtResource("5_kmdno")
+coin_cursor = ExtResource("6_d1add")
+book_cursor = ExtResource("7_1goss")
+bottle_cursor = ExtResource("8_qgf4a")
+setting_cursor = ExtResource("9_ikysf")
+cross_cursor = ExtResource("10_5jyui")
+compass_cursor = ExtResource("11_hontc")

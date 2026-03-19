@@ -1,0 +1,6 @@
+FuncGodotFGDFile
+QodotFGDFile
+TrenchBroomGameConfig
+Weapon
+ItemCategory
+InventoryItem

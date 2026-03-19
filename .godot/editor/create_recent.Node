@@ -1,0 +1,14 @@
+StaticBody3D
+Node3D
+CollisionShape3D
+AnimationPlayer
+MeshInstance3D
+FuncGodotMap
+Node
+CharacterBody3D
+Area3D
+Timer
+GPUParticles3D
+RayCast3D
+Label
+Panel

@@ -1,0 +1,110 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.2.43",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "BearTrap_Closed",
+            "scale" : [
+                1.9894319772720337,
+                1.9894319772720337,
+                1.9894319772720337
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Grey",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.14239658415317535,
+                    0.14239658415317535,
+                    0.14239658415317535,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.017",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1
+                    },
+                    "indices" : 2,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1246,
+            "max" : [
+                0.7076652646064758,
+                0.8286582231521606,
+                1.0404629707336426
+            ],
+            "min" : [
+                -0.7076652646064758,
+                -0.02345133386552334,
+                -0.7408982515335083
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1246,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5123,
+            "count" : 1824,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 14952,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14952,
+            "byteOffset" : 14952
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3648,
+            "byteOffset" : 29904
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 33552,
+            "uri" : "BearTrap_Closed-2b6afe695f4580df37c8546db48dab3b.bin"
+        }
+    ]
+}

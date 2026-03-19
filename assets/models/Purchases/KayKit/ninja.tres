@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bug3hn1sejfxt"]
+
+[ext_resource type="Texture2D" uid="uid://dbh0m7i2001n2" path="res://assets/models/Purchases/KayKit/ninja_texture_B.png" id="1_gx5tc"]
+
+[resource]
+resource_name = "ninja"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_gx5tc")
+emission_enabled = true

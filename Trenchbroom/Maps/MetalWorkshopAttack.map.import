@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dj453460einda"
+path="res://.godot/imported/MetalWorkshopAttack.map-55fa7771457ecfed2f0573e4141efb82.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/Maps/MetalWorkshopAttack.map"
+dest_files=["res://.godot/imported/MetalWorkshopAttack.map-55fa7771457ecfed2f0573e4141efb82.tres"]
+
+[params]
+

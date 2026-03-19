@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cpdo2urxl0otv"]
+
+[ext_resource type="Texture2D" uid="uid://c63s1ea5uh0i8" path="res://Trenchbroom/textures/Delven/dlv_ground4a.png" id="1_ehpm6"]
+
+[resource]
+albedo_texture = ExtResource("1_ehpm6")
+metallic_specular = 0.0
+texture_filter = 2

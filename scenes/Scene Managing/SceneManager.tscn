@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://7sjfq45s42xc"]
+
+[ext_resource type="Script" uid="uid://cbw3kb45cu4ah" path="res://scripts/SceneManager.gd" id="1_k8poj"]
+[ext_resource type="Texture2D" uid="uid://0p4ner2caxqg" path="res://assets/Icons/Buch's RPG Items/Frame.png" id="2_pmksh"]
+[ext_resource type="LabelSettings" uid="uid://iwnmviu2pk6j" path="res://Label Settings/SceneTransition.tres" id="3_pukup"]
+[ext_resource type="PackedScene" uid="uid://b1fv2p2xtnsam" path="res://objects/CameraAndCharacterSystems/Player.tscn" id="4_d0651"]
+[ext_resource type="Script" uid="uid://cjuo55coedp3w" path="res://scripts/weapon.gd" id="5_ys4u6"]
+[ext_resource type="Resource" uid="uid://3u12lbknj16" path="res://objects/weapons/Staff.tres" id="6_yaib3"]
+[ext_resource type="Resource" uid="uid://br58rym6me3h7" path="res://objects/weapons/Dagger.tres" id="7_yaib3"]
+[ext_resource type="Resource" uid="uid://bw1u2ondowqtq" path="res://objects/weapons/BlasterI.tres" id="9_yaib3"]
+[ext_resource type="Resource" uid="uid://cffofm2nduj2r" path="res://objects/weapons/BlasterB.tres" id="11_omk24"]
+[ext_resource type="PackedScene" uid="uid://r72al2beo105" path="res://objects/CameraAndCharacterSystems/cameraController.tscn" id="11_qucdb"]
+
+[sub_resource type="Animation" id="Animation_s0gh8"]
+resource_name = "FadeToBlack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"AfterFadeToBlack"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_54oce"]
+resource_name = "FadeToNormal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"AfterFateToNormal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_r62be"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5s22t"]
+resource_name = "Show Sign"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d0651"]
+_data = {
+&"FadeToBlack": SubResource("Animation_s0gh8"),
+&"FadeToNormal": SubResource("Animation_54oce"),
+&"RESET": SubResource("Animation_r62be"),
+&"Show Sign": SubResource("Animation_5s22t")
+}
+
+[node name="SceneManager" type="Node3D" unique_id=770470878]
+script = ExtResource("1_k8poj")
+
+[node name="Fade To Black" type="Control" parent="." unique_id=222218389]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Fade To Black" unique_id=865485441]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade To Black" unique_id=848804319]
+libraries/ = SubResource("AnimationLibrary_d0651")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Fade To Black" unique_id=841107285]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 17.0
+offset_right = 347.0
+offset_bottom = 63.0
+texture = ExtResource("2_pmksh")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Panel" type="Panel" parent="Fade To Black/NinePatchRect" unique_id=2026943102]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Fade To Black/NinePatchRect/Panel" unique_id=670769679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "  Gold Fields"
+label_settings = ExtResource("3_pukup")
+vertical_alignment = 1
+
+[node name="Player" parent="." unique_id=2108068750 instance=ExtResource("4_d0651")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+weapons = Array[ExtResource("5_ys4u6")]([ExtResource("11_omk24"), ExtResource("6_yaib3"), ExtResource("7_yaib3"), ExtResource("9_yaib3")])
+
+[node name="CameraController" parent="." unique_id=341527686 instance=ExtResource("11_qucdb")]
+
+[node name="CurrentScene" type="Node3D" parent="." unique_id=1128030590]
+
+[node name="To Be deleted at start" type="Node3D" parent="CurrentScene" unique_id=358663365]

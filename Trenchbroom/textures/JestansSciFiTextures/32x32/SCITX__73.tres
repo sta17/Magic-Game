@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cl424474rxyrd"]
+
+[ext_resource type="Texture2D" uid="uid://cwfujiou8eylc" path="res://Trenchbroom/textures/JestansSciFiTextures/32x32/SCITX__73.png" id="1_xofym"]
+
+[resource]
+albedo_texture = ExtResource("1_xofym")
+metallic_specular = 0.0
+texture_filter = 2

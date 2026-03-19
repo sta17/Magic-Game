@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://btg44fxc1xm1c"]
+
+[ext_resource type="Script" uid="uid://dpsn3ipjp865l" path="res://addons/inventory-system/core/item_category.gd" id="1_c7tky"]
+[ext_resource type="Resource" uid="uid://dhinqq0melrsh" path="res://objects/items/item Categories/weapons.tres" id="2_txm8p"]
+[ext_resource type="Resource" uid="uid://cjfoegl57ece7" path="res://objects/items/item Categories/MainHand.tres" id="3_awwip"]
+[ext_resource type="Texture2D" uid="uid://dhet2c47553df" path="res://assets/Icons/Buch's RPG Items/sword 2.png" id="4_c7tky"]
+[ext_resource type="Resource" uid="uid://ddfamjdd4r10q" path="res://objects/weapons/Spaceranger_Blade.tres" id="5_txm8p"]
+[ext_resource type="Resource" uid="uid://nr3l60ndhvdy" path="res://objects/items/item Categories/Item Ranks/Unique.tres" id="5_ywgb8"]
+[ext_resource type="Script" uid="uid://1b8y0bbeo47f" path="res://addons/inventory-system/core/inventory_item.gd" id="6_6a80t"]
+
+[resource]
+script = ExtResource("6_6a80t")
+id = 2
+max_stack = 1
+name = "Sword"
+icon = ExtResource("4_c7tky")
+lore = "A Simple Sword"
+rank = ExtResource("5_ywgb8")
+properties = {
+"ability": null,
+"dropped_item_model": "res://objects/Modified Assets/Shiny Gem.tscn",
+"weapon": ExtResource("5_txm8p")
+}
+categories = Array[ExtResource("1_c7tky")]([ExtResource("2_txm8p"), ExtResource("3_awwip")])

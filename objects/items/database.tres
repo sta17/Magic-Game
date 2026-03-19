@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InventoryDatabase" load_steps=10 format=3 uid="uid://bl8xujlnad0mw"]
+
+[ext_resource type="Script" uid="uid://dpsn3ipjp865l" path="res://addons/inventory-system/core/item_category.gd" id="1_hoc22"]
+[ext_resource type="Resource" uid="uid://klwoptfvmcpv" path="res://objects/items/item Categories/Consumables.tres" id="2_k734n"]
+[ext_resource type="Resource" uid="uid://dhinqq0melrsh" path="res://objects/items/item Categories/weapons.tres" id="3_wcbv7"]
+[ext_resource type="Script" uid="uid://1b8y0bbeo47f" path="res://addons/inventory-system/core/inventory_item.gd" id="4_gflvi"]
+[ext_resource type="Resource" uid="uid://cymey3vniyice" path="res://objects/items/bottle.tres" id="5_w3m2r"]
+[ext_resource type="Resource" uid="uid://c8iatjwh0fjvw" path="res://objects/items/grand Sword.tres" id="6_vecw3"]
+[ext_resource type="Resource" uid="uid://47wshjq2btfg" path="res://objects/items/Soda Blue.tres" id="7_bdtch"]
+[ext_resource type="Script" uid="uid://dref33u40rj4u" path="res://addons/inventory-system/core/inventory_database.gd" id="7_tohqv"]
+[ext_resource type="Resource" uid="uid://yhv0270085uy" path="res://objects/items/Soda.tres" id="8_0lvt1"]
+
+[resource]
+script = ExtResource("7_tohqv")
+items = Array[ExtResource("4_gflvi")]([ExtResource("5_w3m2r"), ExtResource("6_vecw3"), ExtResource("7_bdtch"), ExtResource("8_0lvt1")])
+item_categories = Array[ExtResource("1_hoc22")]([ExtResource("2_k734n"), ExtResource("3_wcbv7")])

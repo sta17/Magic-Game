@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8fsh7le2b8ng"]
+
+[ext_resource type="PackedScene" uid="uid://ld22640aikco" path="res://assets/models/Purchases/KayKit/Ninja_Katana.fbx" id="1_m2j3d"]
+
+[node name="Katana" type="Node3D"]
+
+[node name="Ninja_Katana" parent="." instance=ExtResource("1_m2j3d")]

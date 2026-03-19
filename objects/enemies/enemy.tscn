@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2g78tpqbyf5g"]
+
+[ext_resource type="PackedScene" uid="uid://lde2xq3vq635" path="res://assets/models/Public Domain/Kenney/Starter Kits/enemy-flying.glb" id="1_3v8nl"]
+[ext_resource type="Script" uid="uid://da8fw51ob2e1d" path="res://objects/enemies/enemy.gd" id="1_jg24b"]
+[ext_resource type="SpriteFrames" uid="uid://dbv3sy5qjatnl" path="res://assets/sprites/burst_animation.tres" id="3_iblw5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_iix87"]
+radius = 0.75
+
+[node name="enemy-flying" type="StaticBody3D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_jg24b")
+BaseDamage = null
+attackRate = null
+health = null
+turretShooting = null
+RotSpeedX = null
+RotSpeedY = null
+RotSpeedZ = null
+doBobUpAndDown = null
+
+[node name="enemy-flying" parent="." instance=ExtResource("1_3v8nl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("SphereShape3D_iix87")
+
+[node name="RayCast" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 5)
+collision_mask = 16
+
+[node name="Muzzles" type="Node3D" parent="."]
+
+[node name="MuzzleA" type="AnimatedSprite3D" parent="Muzzles"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.45, 0.3, 0.4)
+sprite_frames = ExtResource("3_iblw5")
+frame = 2
+
+[node name="MuzzleB" type="AnimatedSprite3D" parent="Muzzles"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.45, 0.3, 0.4)
+sprite_frames = ExtResource("3_iblw5")
+frame = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

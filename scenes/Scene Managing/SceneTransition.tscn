@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://db6l6kyivuwjy"]
+
+[ext_resource type="Script" uid="uid://cqwm8vy1ux5lq" path="res://scripts/SceneTransition.gd" id="1_qlseb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlseb"]
+albedo_color = Color(0.368627, 0.368627, 0.368627, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e60n4"]
+material = SubResource("StandardMaterial3D_qlseb")
+size = Vector3(0.5, 1, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qlseb"]
+size = Vector3(0.5, 1, 0.25)
+
+[node name="Scene Transition" type="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_qlseb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_e60n4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_qlseb")
